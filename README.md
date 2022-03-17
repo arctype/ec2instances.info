@@ -43,6 +43,9 @@ Ensure that your IAM user has at least the following permissions:
         ]
     }
 
+Specifically on boto you can run `aws configure` and input your AWS_ACCESS_KEY_ID
+and your AWS_SECRET_ACCESS_KEY into the prompts. You will need these below.
+
 ## Running in Docker (recommended)
 
 1. Clone the repository, if not already done:
@@ -52,7 +55,7 @@ Ensure that your IAM user has at least the following permissions:
 
 1. Build a docker image:
 
-        docker build -t ec2instances.info .
+        docker build --build-arg AWS_ACCESS_KEY_ID=<HI MOM> --build-arg AWS_SECRET_ACCESS_KEY=<HI DAD> -t ec2instances.info .
 
 1. Run a container from the built docker image:
 
